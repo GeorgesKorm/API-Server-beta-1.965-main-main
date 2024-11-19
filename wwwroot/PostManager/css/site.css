@@ -1,0 +1,292 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+       supported by Chrome, Edge, Opera and Firefox */
+    cursor: pointer;
+}
+
+#main {
+    padding: 8px;
+    max-width: 1200px;
+    min-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    height: 100vh;
+    background-color: rgb(239, 239, 239);
+}
+
+#header {
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 50px auto 50px 30px;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    padding: 8px;
+}
+
+#content {
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-snap-type: y mandatory;
+    background-color: white;
+    padding-bottom: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.postRow {
+    padding: 8px;
+    padding-bottom: 0px;
+    scroll-snap-align: start;
+    margin-bottom: 20px;
+}
+
+.postContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: top;
+    border-radius: 6px;
+    padding: 5px;
+    max-width: 800px;
+    margin: auto;
+}
+.postContainer .cmdIcon{
+    display: none;
+}
+
+.postContainer:hover .cmdIcon {
+    display: block;
+}
+.cmdIconsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.editCmd {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+}
+.deleteCmd {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+}
+.cmdIconsContainer{
+   text-align: right;
+   margin: 5px; 
+}
+.waitingGifcontainer {
+    text-align: center;
+    margin: auto;
+}
+
+.waitingGif {
+    height: 300px;
+}
+
+
+.postInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 8px;
+    align-items: center;
+}
+
+.postTitle {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    grid-column: 1 / span 2;
+    grid-row: 2;
+
+}
+.postDescriptionContainer {
+    white-space: pre-wrap;
+    max-height: 100px; /* Set your desired max height */
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Smooth transition */
+    grid-column: 1 / span 2;
+    grid-row: 5;
+}
+
+.postDescriptionContainer.expanded {
+    max-height: none;
+}
+.showMoreBtn {
+    grid-column: 1 / span 2;
+}
+.postText {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    grid-column: 1 / span 2;
+    grid-row: 5;
+}
+
+.postCategory {
+    color: blue;
+    font-weight: bold;
+    padding: 5px;
+}
+.postImage {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    /* background-image: url('http://localhost:5000/assetsRepository/78f177e0-46c0-11ee-9c7d-4dfffb69e19c.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Ensure the element occupies the intended size */
+    width: 100%;
+    height: 400px; /* Adjust height as needed for grid alignment */
+    object-fit: cover;
+
+}
+
+.postDate{
+    color: grey;
+    font-size:small;
+}
+.postCommandPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.cmdIcon {
+    font-size: 1rem;
+    -webkit-text-stroke-color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menuIcon {
+    -webkit-text-fill-color: rgb(0, 87, 204);
+}
+
+.appLogo {
+    height: 40px;
+}
+
+@media screen and (min-width:650px) {
+
+    .contactInfo {
+        grid-template-columns: 40% 35% auto;
+    }
+}
+.avatar {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+}
+
+form {
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+textarea{
+    height: 450px;;  
+}
+#scrollPanel {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-snap-type: y mandatory;
+}
+.postsContainer {
+    margin: auto;
+    margin-left: 8px;
+    width: 100%;
+    max-width: 1600px;
+}
+.errorContainer {
+    font-size: 1.2rem;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: red;
+    padding: 20px;
+}
+
+.PostdeleteForm {
+    margin: auto;
+    padding: auto;
+}
+.cmdButtonsCenter{
+    margin: auto;
+}
+.aboutContainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.aboutContainer p {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+input {
+    margin-bottom: 20px !important;
+}
+
+.contactContainer a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+a {
+    text-decoration: none !important;
+}
